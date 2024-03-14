@@ -20,6 +20,9 @@
         </tr>
     </table>
     
+    {{-- メッセージ編集ページへのリンク --}}
+    <a class="btn btn-outline" href="{{ route('messages.edit', $message->id) }}">このメッセージを編集</a>
+    
 <!--ここまで-->
 
 @endsection

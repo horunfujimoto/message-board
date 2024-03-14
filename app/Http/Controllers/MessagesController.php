@@ -55,7 +55,12 @@ class MessagesController extends Controller
     // getでmessages/（任意のid）/editにアクセスされた場合の「更新画面表示処理」
     public function edit($id)
     {
-        //
+        // idの値でメッセージを検索して取得
+        $message = Message::findOrFail($id);
+        // メッセージ編集ビューでそれを表示
+        return view('messages.edit', [
+            'message' => $message,
+        ]);
     }
 
     // putまたはpatchでmessages/（任意のid）にアクセスされた場合の「更新処理」
