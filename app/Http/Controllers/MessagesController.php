@@ -32,7 +32,12 @@ class MessagesController extends Controller
     // postでmessages/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
-        //
+        // メッセージを作成
+        $message = new Message;
+        $message->content = $request->content;
+        $message->save();
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 
     // getでmessages/（任意のid）にアクセスされた場合の「取得表示処理」
