@@ -26,6 +26,9 @@
             </tbody>
         </table>
     @endif
+    
+    {{-- メッセージ作成ページへのリンク --}}
+    <a class="btn btn-primary" href="{{ route('messages.create') }}">新規メッセージの投稿</a>
         
 <!-- ここまで -->
 
