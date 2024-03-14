@@ -18,9 +18,9 @@
             </thead>
             <tbody>
                 @foreach ($messages as $message)
-                    <tr>
-                    <td><a class="link link-hover text-info" href="#">{{$message->id}}</a></td>
-                    <td>{{$message->content}}</td>
+                <tr>
+                    <td><a class="link link-hover text-info" href="{{ route('messages.show', $message->id) }}">{{ $message->id }}</a></td>
+                    <td>{{ $message->content }}</td>
                 </tr>
                 @endforeach
             </tbody>

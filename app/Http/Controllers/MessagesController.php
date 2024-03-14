@@ -43,7 +43,13 @@ class MessagesController extends Controller
     // getでmessages/（任意のid）にアクセスされた場合の「取得表示処理」
     public function show($id)
     {
-        //
+        // idの値でメッセージを検索して取得
+        // findOrFail:レコードが存在しない時に404エラーを出す
+        $message = Message::findOrFail($id);
+        // メッセージ詳細ビューでそれを表示
+        return view('messages.show', [
+            'message' => $message,
+        ]);
     }
 
     // getでmessages/（任意のid）/editにアクセスされた場合の「更新画面表示処理」
